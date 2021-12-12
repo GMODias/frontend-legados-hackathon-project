@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Table.css'
+import '../css/components/Table.css'
 
 const confirmedMock = [
   '{"time":"02:30 ","date":"12/12/2021"}', 

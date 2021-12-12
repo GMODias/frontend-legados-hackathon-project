@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {Modal, Table} from '../../components';
-import './StudentSchedule.css';
+import {Modal, Table} from '../components';
+import '../css/pages/StudentSchedule.css';
 
 function StudentSchedule() {
   const [showModal, setShowModal] = useState(false);

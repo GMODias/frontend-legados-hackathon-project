@@ -1,2 +1,2 @@
-export { default as StudentSchedule } from './StudentSchedule/StudentSchedule';
+export { default as StudentSchedule } from './StudentSchedule';
 
