@@ -1,0 +1,12 @@
+body {
+  overflow: hidden;
+}
+
+.scheduleTableDiv {
+height: 90vh;
+margin-left:  25vw;
+margin-top: 10vh;
+overflow-y: scroll;
+position: relative;
+}
+

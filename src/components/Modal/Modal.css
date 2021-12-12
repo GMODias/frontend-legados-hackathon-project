@@ -1,0 +1,35 @@
+/* Source : 
+https://medium.com/tinyso/how-to-create-a-modal-component-in-react-from-basic-to-advanced-a3357a2a716a */
+.modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.514);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  }
+
+  .modal-content {
+    background-color: whitesmoke;
+    border-radius: 2em;
+    width: 500px;
+  }
+
+  .modal-header, .modal-footer {
+    background-color: gray;
+    padding: 10px;
+  }
+
+  .modal-title {
+    margin: 0;
+  }
+
+  .modal-body {
+    border-bottom: 4px solid darkolivegreen;
+    border-top: 4px solid darkolivegreen;
+    padding: 10px;
+  }
