@@ -1,11 +1,14 @@
 import React from 'react';
-import {StudentSchedule} from './pages';
+import { Switch, Route } from 'react-router';
+import * as pages from './pages';
 import './App.css';
 
 function App() {
   return (
-  <>
-    <StudentSchedule />
+    <>
+    <Switch>
+      <Route exat path='/' component={pages.StudentSchedule} />
+    </Switch>
     </>  
   );
 }
