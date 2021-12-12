@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Redirect } from 'react-router';
+import {ButtonConfig} from '../components';
 import '../css/pages/Main.css';
 
 function Main() {
@@ -10,7 +11,7 @@ function Main() {
       {redirect && <Redirect to={redirect} />}
       <header className='mainHeader'>
         <h1>Main</h1>
-        <button onClick={() => setRedirect('/userConfig')}> config </button>
+        <ButtonConfig />
       </header>
       <main>
         <button onClick={() => setRedirect('/student') }>Student</button>
