@@ -57,6 +57,13 @@ const [dataToSend, setDataToSend] = useState([]);
     setDateInfo(newdateInfo);
   };
 
+  const removeDay = (time) =>{
+    const timeData = time.split(':');
+    const dayDifference = Number(timeData[0]) - 24;
+    const removedTime = dayDifference > 0 ? `${lenTwo(dayDifference)}:${timeData[1]}` : '00:00';
+    return removedTime;
+  };
+
   const btnTimeClick = ({target}) => {
     const scheduleClickAction = {
       'greenlane': () => {
@@ -80,7 +87,8 @@ const [dataToSend, setDataToSend] = useState([]);
     if (j === 0) return scheduleTimes[i];
     const id = JSON.stringify({time: scheduleTimes[i],date: dateInfo[j-1].monthDay});
     const cellStatus = 2 + confirmedMock.includes(id) * 4 + teachingAvaiabilityMock.includes(id) * 8
-      + (timeNow > scheduleTimes[i] && j === 1) * 16;
+      + ((timeNow > scheduleTimes[i] && j === 1) 
+      || (removeDay(timeNow) > scheduleTimes[i] && j === 2)) * 16;
         return (
       <button 
         id={id} 
