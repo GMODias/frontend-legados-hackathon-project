@@ -3,10 +3,13 @@ body {
 }
 
 .scheduleTableDiv {
-height: 90vh;
-margin-left:  25vw;
-margin-top: 10vh;
-overflow-y: scroll;
-position: relative;
+  justify-content: center;
+  display: flex;
+  height: 80vh;
+  margin-left:  29vw;
+  margin-right:  29vw;
+  margin-top: 10vh;
+  overflow-y: scroll;
+  position: relative;
 }
 
