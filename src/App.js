@@ -14,6 +14,6 @@ function App() {
       <Route path="/userConfig" component={ pages.UserConfig } />
     </Switch>
   );
-};
+}
 
 export default App;
