@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import configBtnImage from '../images/config.png';
 // import mainBtnImage from '../images/house.png';
 import '../css/components/ButtonConfig.css';
