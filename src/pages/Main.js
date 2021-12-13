@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import { ButtonWithImage } from '../components';
 import '../css/pages/Main.css';
 
@@ -8,7 +8,7 @@ function Main() {
 
   return (
     <>
-      {redirect && <Redirect to={ redirect } />}
+      { redirect && <Redirect to={ redirect } /> }
       <header className="mainHeader">
         <h1>Main</h1>
         <ButtonWithImage kind="config" />

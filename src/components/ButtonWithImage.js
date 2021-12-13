@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import configBtnImage from '../images/config.png';
 import mainBtnImage from '../images/house.png';
@@ -23,7 +23,7 @@ function ButtonWithImage({ kind }) {
 
   return (
     <>
-      {redirect && <Redirect to={ redirect } />}
+      { redirect && <Redirect to={ redirect } /> }
       <button
         className="btnStyle"
         type="button"
