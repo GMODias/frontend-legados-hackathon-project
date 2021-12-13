@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/components/Modal.css';
+import PropTypes from 'prop-types';
 
 function Modal({ props }) {
   const { setShowModal } = props;
@@ -26,5 +27,9 @@ function Modal({ props }) {
     </div>
   );
 }
+
+Modal.propTypes = {
+
+};
 
 export default Modal;
