@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import '../css/components/Table.css';
 
 const confirmedMock = [
-  '{"time":"02:30 ","date":"12/12/2021"}',
-  '{"time":"02:30 ","date":"13/12/2021"}',
-  '{"time":"03:00 ","date":"13/12/2021"}',
-  '{"time":"03:30 ","date":"14/12/2021"}',
+  '{"time":"02:30","date":"12/12/2021"}',
+  '{"time":"02:30","date":"13/12/2021"}',
+  '{"time":"03:00","date":"13/12/2021"}',
+  '{"time":"03:30","date":"14/12/2021"}',
 ];
 
 const teachingAvaiabilityMock = [
-  '{"time":"01:00 ","date":"17/12/2021"}',
-  '{"time":"01:00 ","date":"15/12/2021"}',
-  '{"time":"00:30 ","date":"14/12/2021"}',
-  '{"time":"00:00 ","date":"13/12/2021"}',
-  '{"time":"03:30 ","date":"18/12/2021"}',
+  '{"time":"01:00","date":"17/12/2021"}',
+  '{"time":"01:00","date":"15/12/2021"}',
+  '{"time":"00:30","date":"14/12/2021"}',
+  '{"time":"00:00","date":"13/12/2021"}',
+  '{"time":"03:30","date":"18/12/2021"}',
 ];
 
 const weekDays = {
@@ -54,8 +54,8 @@ function Table() {
     const todayDate = new Date();
     const safetyTime = 12;
     const qtdCalendarDay = 7;
-    setTimeNow(`${lenTwo(todayDate.getHours() + safetyTime)}
-      :${lenTwo(todayDate.getMinutes())}`);
+    setTimeNow(`${lenTwo(todayDate.getHours() + safetyTime)}`
+      + `:${lenTwo(todayDate.getMinutes())}`);
 
     for (let index = 0; index < qtdCalendarDay; index += 1) {
       newdateInfo
@@ -112,8 +112,8 @@ function Table() {
         type="button"
         id={ id }
         aria-label="s"
-        className={ `${cellBaseClName} ${tableCellClasses[parseInt(Math
-          .log2(cellStatus), 10)]}` }
+        className={ `${cellBaseClName} `
+          + `${tableCellClasses[parseInt(Math.log2(cellStatus), 10)]}` }
         onClick={ btnTimeClick }
       />
     );
@@ -121,13 +121,13 @@ function Table() {
 
   const makeDataTable = () => {
     const halfHour = 30;
-    const tableHeader = dateInfo.map((e) => `${e.monthDay.split('/20')[0]} 
-      \n\n ${e.weekDay}`);
+    const tableHeader = dateInfo.map((e) => `${e.monthDay.split('/20')[0]}`
+      + `\n\n ${e.weekDay}`);
 
     tableHeader.unshift('Horários');
 
     const scheduleTimes = Array.from({ length: 48 },
-      (_, i) => `${lenTwo(parseInt(i / 2, 10))}:${lenTwo((i % 2) * halfHour)} `);
+      (_, i) => `${lenTwo(parseInt(i / 2, 10))}:${lenTwo((i % 2) * halfHour)}`);
 
     return (
       <div className="table-container">
