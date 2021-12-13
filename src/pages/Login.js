@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import loginMiddleware from '../middlewares/login';
 import '../css/pages/Login.css';
 
 function Login() {
@@ -8,6 +9,8 @@ function Login() {
   const [passwordInput, setPasswordInput] = useState('');
   const [disableBtn, setDisableBtn] = useState(true);
   const [redirect, setRedirect] = useState(null);
+  const [loginStatus, setLoginStatus] = useState('');
+  const [token, setToken] = useState('');
 
   const btnStats = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,15 +28,20 @@ function Login() {
       password: passwordInput,
     };
     // coloque a porta de acordo com a porta que o servidor esta rodando.
-    const response = await axios.post('http://localhost:3500/login', userObject);
-    console.log(response);
-
-    setEmailInput('');
-    setPasswordInput('');
-    setRedirect(true);
+    try {
+      const response = await axios.post('http://localhost:3500/login', userObject);
+      const tokenResponse = loginMiddleware(response);
+      setToken(tokenResponse);
+    } catch (err) {
+      setLoginStatus('Login ou senha inválido!');
+    }
   };
 
   useEffect(btnStats, [disableBtn, emailInput, passwordInput]);
+
+  useEffect(() => {
+    if (token !== '') return setRedirect(true);
+  }, [token]);
 
   return (
     <div className="login-div">
@@ -56,10 +64,10 @@ function Login() {
           data-testid="password-input"
           onChange={ ({ target: { value } }) => setPasswordInput(value) }
         />
+        <p>{loginStatus}</p>
         <button
           type="submit"
           disabled={ disableBtn }
-          // onClick={ () => setRedirect(true) }
         >
           ENTRAR
         </button>
