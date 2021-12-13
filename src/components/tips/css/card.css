@@ -33,6 +33,10 @@
 }
 
 .likes button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.4s ease;
 }
 
@@ -42,4 +46,10 @@
 
 .likes button:active {
   transform: scale3d(1, 1, 1);
+}
+
+.likes button>span {
+  font-size: 9px;
+  position: absolute;
+  bottom: -12px;
 }

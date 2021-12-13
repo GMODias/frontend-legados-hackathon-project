@@ -40,6 +40,10 @@ const Linux = ({ idtips, title }) => {
     }
   };
 
+  const handleClickVotesPro = () => {
+
+  };
+
   return (
     <div className="tipstheme">
       <div>
@@ -47,6 +51,11 @@ const Linux = ({ idtips, title }) => {
       </div>
       <div className="likes">
         <button type="button" onClick={ handleClickVotes }>👍</button>
+        <span>{ votes }</span>
+        <button type="button" onClick={ handleClickVotesPro }>
+          👍
+          <span title="MENTORES">MENT</span>
+        </button>
         <span>{ votes }</span>
       </div>
     </div>
