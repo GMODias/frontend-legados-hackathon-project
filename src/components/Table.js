@@ -95,6 +95,7 @@ function Table() {
       blocked: () => 1,
     };
     scheduleClickAction[target.classList[1]]();
+    console.log(dataToSend);
   };
 
   const cellDate = (i, j, scheduleTimes) => {
