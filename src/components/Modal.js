@@ -29,7 +29,8 @@ function Modal({ props }) {
 }
 
 Modal.propTypes = {
-
+  setShowModal: PropTypes.func.isRequired,
+  props: PropTypes.objectOf().isRequired,
 };
 
 export default Modal;
