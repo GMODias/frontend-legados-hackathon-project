@@ -8,14 +8,18 @@ function ButtonConfig() {
 
   return (
     <>
-    {redirect && <Redirect to={redirect} />}
-    <button className="btnConfig" type="button" onClick={() => setRedirect('/userConfig') }>
-      <img
-        src={ configBtnImage }
-        className='configImg'
-        alt="Configurations"
-      />
-    </button>
+      {redirect && <Redirect to={ redirect } />}
+      <button
+        className="btnConfig"
+        type="button"
+        onClick={ () => setRedirect('/userConfig') }
+      >
+        <img
+          src={ configBtnImage }
+          className="configImg"
+          alt="Configurations"
+        />
+      </button>
     </>
   );
 }
