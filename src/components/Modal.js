@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/components/Modal.css';
 import PropTypes from 'prop-types';
+import '../css/components/Modal.css';
 
 function Modal({ props }) {
   const { setShowModal } = props;

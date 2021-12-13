@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
-import { ButtonConfig } from '../components';
+import { ButtonWithImage } from '../components';
 import '../css/pages/Main.css';
 
 function Main() {
@@ -11,7 +11,7 @@ function Main() {
       {redirect && <Redirect to={ redirect } />}
       <header className="mainHeader">
         <h1>Main</h1>
-        <ButtonConfig />
+        <ButtonWithImage kind="config" />
       </header>
       <main>
         <button type="button" onClick={ () => setRedirect('/student') }>Student</button>
