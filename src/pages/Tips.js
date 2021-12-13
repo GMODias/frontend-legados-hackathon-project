@@ -7,6 +7,7 @@ function Tips() {
   return (
     <>
       <ButtonWithImage kind="main" />
+      <ButtonWithImage kind="back" />
       { !selectedTheme && <ThemeSelector setTheme={ setSelectedTheme } /> }
       { selectedTheme && `vou te mostrar as dicas de ${selectedTheme}` }
     </>
