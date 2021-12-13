@@ -2,6 +2,15 @@ body {
   overflow: hidden;
 }
 
+.navigateBtns {
+  display: flex;
+}
+
+.headerTxt {
+  display: flex;
+  justify-content: center;
+}
+
 .scheduleTableDiv {
   justify-content: center;
   display: flex;
@@ -12,4 +21,5 @@ body {
   overflow-y: scroll;
   position: relative;
 }
+
 
