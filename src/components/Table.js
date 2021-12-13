@@ -61,7 +61,7 @@ function Table() {
       newdateInfo
         .push({
           monthDay: todayDate
-            .toLocaleDateString(),
+            .toLocaleDateString('pt-br'),
           weekDay: weekDays[todayDate.getDay()],
         });
       if (index < qtdCalendarDay - 1) todayDate.setDate(todayDate.getDate() + 1);
@@ -95,6 +95,7 @@ function Table() {
       blocked: () => 1,
     };
     scheduleClickAction[target.classList[1]]();
+    console.log(dataToSend);
   };
 
   const cellDate = (i, j, scheduleTimes) => {
