@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../css/components/ButtonWithImage.css';
-
-const allThemes = ['Linux', 'Bash', 'GIT', 'IDE / VSCode', 'JavaScript', 'Testes JS',
-  'React', 'Testes React', 'Redux', 'Context', 'MySQL', 'MongoDB', 'Express'];
+import allThemes from '../allThemes';
 
 function ThemeSelector({ setTheme }) {
   const [themes, setThemes] = useState([]);
