@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-<<<<<<< HEAD
 import { ButtonWithImage } from '../components';
-=======
-import { ButtonConfig } from '../components';
->>>>>>> 079150cc7d645ef86d810952b0c765a70d635fbd
 import '../css/pages/Main.css';
 
 function Main() {
