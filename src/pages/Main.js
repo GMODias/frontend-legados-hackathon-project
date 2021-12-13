@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import { ButtonConfig } from '../components';
 import '../css/pages/Main.css';
 
