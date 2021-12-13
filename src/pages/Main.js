@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router';
-import {ButtonConfig} from '../components';
+import { ButtonConfig } from '../components';
 import '../css/pages/Main.css';
 
 function Main() {
@@ -8,15 +8,15 @@ function Main() {
 
   return (
     <>
-      {redirect && <Redirect to={redirect} />}
-      <header className='mainHeader'>
+      {redirect && <Redirect to={ redirect } />}
+      <header className="mainHeader">
         <h1>Main</h1>
         <ButtonConfig />
       </header>
       <main>
-        <button onClick={() => setRedirect('/student') }>Student</button>
-        <button onClick={() => setRedirect('/mentor') }>Mentor</button>
-        <button onClick={() => setRedirect('/tips') }>Tips</button>
+        <button type="button" onClick={ () => setRedirect('/student') }>Student</button>
+        <button type="button" onClick={ () => setRedirect('/mentor') }>Mentor</button>
+        <button type="button" onClick={ () => setRedirect('/tips') }>Tips</button>
       </main>
     </>
   );
