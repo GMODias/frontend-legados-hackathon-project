@@ -16,12 +16,24 @@ function Tips() {
       </div>
 
       { selectedTheme && `Vou te mostrar as dicas de ${selectedTheme}` }
-      { selectedTheme === 'Linux' && <Card
-        idtips={ 5 }
-        title="Como configurar seu linux para desenvolvimento de software"
-      /> }
+      { selectedTheme === 'Linux'
+        && (<Card
+          idtips={ 5 }
+          title="Como configurar seu linux para desenvolvimento de software"
+        />) }
     </div>
   );
 }
 
 export default Tips;
+
+// mocksTips.map(({ idtips, title }) => (<Card
+//   key={ idtips }
+//   idtips={ idtips }
+//   title={ title }
+// />)
+
+/* <Card
+          idtips={ 5 }
+          title="Como configurar seu linux para desenvolvimento de software"
+        /> */
