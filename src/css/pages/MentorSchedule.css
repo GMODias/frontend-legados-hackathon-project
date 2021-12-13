@@ -1,0 +1,25 @@
+body {
+  overflow: hidden;
+}
+
+.navigateBtns {
+  display: flex;
+}
+
+.headerTxt {
+  display: flex;
+  justify-content: center;
+}
+
+.scheduleTableDiv {
+  justify-content: center;
+  display: flex;
+  height: 80vh;
+  margin-left:  29vw;
+  margin-right:  29vw;
+  margin-top: 10vh;
+  overflow-y: scroll;
+  position: relative;
+}
+
+

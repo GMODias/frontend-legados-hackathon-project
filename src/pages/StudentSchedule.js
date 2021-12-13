@@ -12,16 +12,25 @@ function StudentSchedule() {
     </div>
   );
 
+  const makeH1 = (txt) => (
+    <h1 className="headerTxt">
+      {txt}
+    </h1>
+  );
+
   return (
     <>
-      {showModal && <Modal props={ { setShowModal } } />}
-      <ButtonWithImage kind="main" />
-      <button type="button" onClick={ () => setShowModal(true) }>teste</button>
-      { selectedTheme && <ButtonWithImage kind="back" />}
-      { !selectedTheme && <ThemeSelector setTheme={ setSelectedTheme } /> }
-      { selectedTheme && `Marcação das Mentorias de ${selectedTheme}` }
+      <header>
+        <div className="navigateBtns">
+          {showModal && <Modal props={ { setShowModal } } />}
+          <ButtonWithImage kind="main" />
+          { selectedTheme && <ButtonWithImage kind="back" />}
+          <button type="button" onClick={ () => setShowModal(true) }>teste</button>
+        </div>
+        { !selectedTheme && <ThemeSelector setTheme={ setSelectedTheme } /> }
+        { selectedTheme && makeH1(`Marcação das Mentorias de ${selectedTheme} - ALUNO`) }
+      </header>
       { selectedTheme && showTable() }
-
     </>
   );
 }
