@@ -8,30 +8,36 @@ const Linux = ({ idtips, title }) => {
   useEffect(() => {
     const getVotes = localStorage.getItem('votes');
     if (!getVotes) {
-      localStorage.setItem('votes', JSON.stringify([{ id: idtips, likes: 1 }]));
-      setVotes(1);
+      localStorage.setItem('votes', JSON.stringify([{
+        id: idtips,
+        likes: 0,
+        usersLike: [],
+      }]));
+      setVotes(0);
     } else {
       const converted = JSON.parse(getVotes);
       const index = converted.findIndex(({ id }) => id === idtips);
-      converted[index].likes += 1;
+      if (!converted[index].usersLike.includes('Marlon')) {
+        localStorage.setItem('votes', JSON.stringify([
+          ...converted,
+        ]));
+      }
       setVotes(converted[index].likes);
-      localStorage.setItem('votes', JSON.stringify([
-        ...converted,
-      ]));
     }
   }, [idtips]);
 
   const handleClickVotes = () => {
     const getVotes = localStorage.getItem('votes');
-
     const converted = JSON.parse(getVotes);
     const index = converted.findIndex(({ id }) => id === idtips);
-    converted[index].likes += 1;
-    setVotes(converted[index].likes);
-
-    localStorage.setItem('votes', JSON.stringify([
-      ...converted,
-    ]));
+    if (!converted[index].usersLike.includes('Marlon')) {
+      converted[index].likes += 1;
+      converted[index].usersLike.push('Marlon');
+      setVotes(converted[index].likes);
+      localStorage.setItem('votes', JSON.stringify([
+        ...converted,
+      ]));
+    }
   };
 
   return (
