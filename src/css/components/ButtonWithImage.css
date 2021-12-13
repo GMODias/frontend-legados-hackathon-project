@@ -1,4 +1,4 @@
-.btnConfig {
+.btnStyle {
   background-color: transparent;
   border: none;
   display: flex;
@@ -7,6 +7,6 @@
   width: 35px;
 }
 
-.configImg {
+.imgStyle {
   height: 100%;
 }

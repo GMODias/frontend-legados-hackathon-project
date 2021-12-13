@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import '../css/pages/Login.css';
 
 function Login() {
@@ -12,7 +12,7 @@ function Login() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const minPasswordLenght = 6;
     const disable = !(emailRegex.test(emailInput)
-    && passwordInput.length >= minPasswordLenght);
+      && passwordInput.length >= minPasswordLenght);
     if (disableBtn !== disable) setDisableBtn(disable);
   };
 
@@ -20,7 +20,7 @@ function Login() {
 
   return (
     <div className="login-div">
-      {redirect && <Redirect to="/main" />}
+      { redirect && <Redirect to="/main" /> }
       <h1>LOGIN</h1>
       <input
         type="text"

@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import '../css/components/Table.css';
 
 const confirmedMock = [
-  '{"time":"02:30 ","date":"12/12/2021"}',
-  '{"time":"02:30 ","date":"13/12/2021"}',
-  '{"time":"03:00 ","date":"13/12/2021"}',
-  '{"time":"03:30 ","date":"14/12/2021"}',
+  '{"time":"02:30","date":"15/12/2021"}',
+  '{"time":"02:30","date":"16/12/2021"}',
+  '{"time":"03:00","date":"17/12/2021"}',
+  '{"time":"03:30","date":"18/12/2021"}',
 ];
 
 const teachingAvaiabilityMock = [
-  '{"time":"01:00 ","date":"17/12/2021"}',
-  '{"time":"01:00 ","date":"15/12/2021"}',
-  '{"time":"00:30 ","date":"14/12/2021"}',
-  '{"time":"00:00 ","date":"13/12/2021"}',
-  '{"time":"03:30 ","date":"18/12/2021"}',
+  '{"time":"01:00","date":"17/12/2021"}',
+  '{"time":"01:00","date":"15/12/2021"}',
+  '{"time":"00:30","date":"14/12/2021"}',
+  '{"time":"00:00","date":"17/12/2021"}',
+  '{"time":"03:30","date":"18/12/2021"}',
 ];
 
 const weekDays = {
@@ -54,14 +54,16 @@ function Table() {
     const todayDate = new Date();
     const safetyTime = 12;
     const qtdCalendarDay = 7;
-    setTimeNow(`${lenTwo(todayDate.getHours() + safetyTime)}
-      :${lenTwo(todayDate.getMinutes())}`);
+    setTimeNow(`${lenTwo(todayDate.getHours() + safetyTime)}`
+      + `:${lenTwo(todayDate.getMinutes())}`);
 
     for (let index = 0; index < qtdCalendarDay; index += 1) {
       newdateInfo
-        .push({ monthDay: todayDate
-          .toLocaleDateString(),
-        weekDay: weekDays[todayDate.getDay()] });
+        .push({
+          monthDay: todayDate
+            .toLocaleDateString('pt-br'),
+          weekDay: weekDays[todayDate.getDay()],
+        });
       if (index < qtdCalendarDay - 1) todayDate.setDate(todayDate.getDate() + 1);
     }
     setDateInfo(newdateInfo);
@@ -88,11 +90,12 @@ function Table() {
       },
       // Confirmed deverá abrir um modal para mostrar os dados do mentor, aluno, ok para sair e cancelar.
       confirmed: () => 1,
-      // Ao clicar no avaible e depois salvar marcações (botão a ser criado, ele deve enviar para o backend a marcação e atualizar os dados na tela).
+      // Ao clicar no avaible e depois salvar marcações (botão a ser criado, ele deve enviar para o backend a marcação e atualizar os dados na tela).z
       avaiable: () => 1,
       blocked: () => 1,
     };
     scheduleClickAction[target.classList[1]]();
+    console.log(dataToSend);
   };
 
   const cellDate = (i, j, scheduleTimes) => {
@@ -101,19 +104,21 @@ function Table() {
     const bit4 = 8;
     const bit5 = 16;
     if (j === 0) return scheduleTimes[i];
-    const id = JSON.stringify({ time: scheduleTimes[i],
-      date: dateInfo[j - 1].monthDay });
+    const id = JSON.stringify({
+      time: scheduleTimes[i],
+      date: dateInfo[j - 1].monthDay,
+    });
     const cellStatus = bit2 + confirmedMock.includes(id) * bit3
       + teachingAvaiabilityMock.includes(id) * bit4
-        + ((timeNow > scheduleTimes[i] && j === 1)
-          || (removeDay(timeNow) > scheduleTimes[i] && j === 2)) * bit5;
+      + ((timeNow > scheduleTimes[i] && j === 1)
+        || (removeDay(timeNow) > scheduleTimes[i] && j === 2)) * bit5;
     return (
       <button
         type="button"
         id={ id }
         aria-label="s"
-        className={ `${cellBaseClName} ${tableCellClasses[parseInt(Math
-          .log2(cellStatus), 10)]}` }
+        className={ `${cellBaseClName} `
+          + `${tableCellClasses[parseInt(Math.log2(cellStatus), 10)]}` }
         onClick={ btnTimeClick }
       />
     );
@@ -121,33 +126,33 @@ function Table() {
 
   const makeDataTable = () => {
     const halfHour = 30;
-    const tableHeader = dateInfo.map((e) => `${e.monthDay.split('/20')[0]} 
-      \n\n ${e.weekDay}`);
+    const tableHeader = dateInfo.map((e) => `${e.monthDay.split('/20')[0]}`
+      + `\n\n ${e.weekDay}`);
 
     tableHeader.unshift('Horários');
 
     const scheduleTimes = Array.from({ length: 48 },
-      (_, i) => `${lenTwo(parseInt(i / 2, 10))}:${lenTwo((i % 2) * halfHour)} `);
+      (_, i) => `${lenTwo(parseInt(i / 2, 10))}:${lenTwo((i % 2) * halfHour)}`);
 
     return (
       <div className="table-container">
         <table>
           <thead>
             <tr>
-              { tableHeader.map((head, i) => <th key={ i }>{head}</th>) }
+              { tableHeader.map((head, i) => <th key={ i }>{ head }</th>) }
             </tr>
           </thead>
           <tbody>
-            {scheduleTimes.map((time, i) => (
+            { scheduleTimes.map((time, i) => (
               <tr key={ i }>
-                {tableHeader.map((_, j) => (
+                { tableHeader.map((_, j) => (
                   <td
                     key={ String(i) + String(j) }
                   >
-                    {cellDate(i, j, scheduleTimes)}
-                  </td>))}
+                    { cellDate(i, j, scheduleTimes) }
+                  </td>)) }
               </tr>
-            ))}
+            )) }
           </tbody>
         </table>
       </div>
@@ -156,8 +161,8 @@ function Table() {
 
   return (
     <>
-      {!dateInfo && makeDateInfo()}
-      {dateInfo && makeDataTable()}
+      { !dateInfo && makeDateInfo() }
+      { dateInfo && makeDataTable() }
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Table } from '../components';
+import { Modal, Table, ButtonWithImage } from '../components';
 import '../css/pages/StudentSchedule.css';
 
 function StudentSchedule() {
@@ -7,6 +7,7 @@ function StudentSchedule() {
   return (
     <>
       {showModal && <Modal props={ { setShowModal } } />}
+      <ButtonWithImage kind="main" />
       <button type="button" onClick={ () => setShowModal(true) }>teste</button>
       <div className="scheduleTableDiv">
         <Table />
