@@ -46,7 +46,7 @@ function Login() {
 
   return (
     <div className="login-div">
-      <form onSubmit={ (e) => onSubmit(e) }>
+      <form className="form-div" onSubmit={ (e) => onSubmit(e) }>
         {redirect && <Redirect to="/main" />}
         <h1>LOGIN</h1>
         <input
