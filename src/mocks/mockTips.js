@@ -1,34 +1,34 @@
 const mocksTips = [{
   idtips: 0,
-  category: 'javascript',
-  title: 'Configurando vscode para o javascript',
+  category: 'JavaScript',
+  title: 'Configurando vscode para o JavaScript',
 }, {
   idtips: 1,
   category: 'Linux',
   title: 'Como configurar seu Linux para desenvolvimento de software',
 }, {
   idtips: 2,
-  category: 'git',
-  title: 'O basico do git',
+  category: 'GIT',
+  title: 'O basico do GIT',
 }, {
   idtips: 3,
-  category: 'javascript',
-  title: 'Melhores pratias javascript',
+  category: 'JavaScript',
+  title: 'Melhores pratias JavaScript',
 }, {
   idtips: 4,
   category: 'Linux',
-  title: 'Como instar o node no Linux',
+  title: 'Como instalar o node no Linux',
 }, {
   idtips: 5,
-  category: 'javascript',
-  title: 'Configurar eslint para javascript no vscode',
+  category: 'JavaScript',
+  title: 'Configurar eslint para JavaScript no vscode',
 }, {
   idtips: 6,
-  category: 'javascript',
-  title: '',
+  category: 'JavaScript',
+  title: 'Segredos do JavaScript',
 }, {
   idtips: 7,
-  category: 'git',
+  category: 'GIT',
   title: 'Remover um commit indesejável',
 }, {
   idtips: 8,
@@ -36,8 +36,8 @@ const mocksTips = [{
   title: 'Configurar grub do Linux',
 }, {
   idtips: 9,
-  category: 'git',
-  title: 'Configurar chave SSH do git',
+  category: 'GIT',
+  title: 'Configurar chave SSH do GIT',
 }];
 
 export default mocksTips;

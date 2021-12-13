@@ -12,20 +12,18 @@ const Linux = ({ idtips, title }) => {
       localStorage.setItem('uservotes', JSON.stringify([{
         id: idtips,
         userlikes: 0,
-        mentLike: 0,
+        mentLikes: 0,
         usersLike: [],
       }]));
+
       setVotes(0);
     } else {
       const converted = JSON.parse(getVotes);
       const index = converted.findIndex(({ id }) => id === idtips);
-      if (!converted[index].usersLike.includes('Marlon')) {
-        localStorage.setItem('uservotes', JSON.stringify([
-          ...converted,
-        ]));
+      if (index >= 0) {
+        setMentVotes(converted[index].mentLike);
+        setVotes(converted[index].userlikes);
       }
-      setMentVotes(converted[index].mentLike);
-      setVotes(converted[index].userlikes);
     }
   }, [idtips]);
 
@@ -33,6 +31,15 @@ const Linux = ({ idtips, title }) => {
     const getVotes = localStorage.getItem('uservotes');
     const converted = JSON.parse(getVotes);
     const index = converted.findIndex(({ id }) => id === idtips);
+
+    if (index < 0) {
+      converted.push({
+        id: idtips,
+        userlikes: 0,
+        mentLikes: 0,
+        usersLike: [],
+      });
+    }
 
     if (!converted[index].usersLike.includes('Other User')) {
       converted[index].userlikes += 1;
@@ -49,10 +56,20 @@ const Linux = ({ idtips, title }) => {
     const getVotes = localStorage.getItem('uservotes');
     const converted = JSON.parse(getVotes);
     const index = converted.findIndex(({ id }) => id === idtips);
+
+    if (!index) {
+      converted.push({
+        id: idtips,
+        userlikes: 0,
+        mentLikes: 0,
+        usersLike: [],
+      });
+    }
+
     if (!converted[index].usersLike.includes('Marlon')) {
-      converted[index].mentLike += 1;
+      converted[index].mentLikes += 1;
       converted[index].usersLike.push('Marlon');
-      setMentVotes(converted[index].mentLike);
+      setMentVotes(converted[index].mentLikes);
     }
 
     localStorage.setItem('uservotes', JSON.stringify([

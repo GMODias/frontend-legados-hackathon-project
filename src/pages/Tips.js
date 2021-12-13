@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ButtonWithImage, ThemeSelector } from '../components/index';
 import Card from '../components/tips/Card';
 import '../css/pages/Tips.css';
+import mockTips from '../mocks/mockTips';
 
 function Tips() {
   const [selectedTheme, setSelectedTheme] = useState(null);
@@ -16,24 +17,15 @@ function Tips() {
       </div>
 
       { selectedTheme && `Vou te mostrar as dicas de ${selectedTheme}` }
-      { selectedTheme === 'Linux'
-        && (<Card
-          idtips={ 5 }
-          title="Como configurar seu linux para desenvolvimento de software"
-        />) }
+      { (mockTips.map(({ idtips, title, category }) => (
+        category === selectedTheme
+        && <Card
+          key={ idtips }
+          idtips={ idtips }
+          title={ title }
+        />))) }
     </div>
   );
 }
 
 export default Tips;
-
-// mocksTips.map(({ idtips, title }) => (<Card
-//   key={ idtips }
-//   idtips={ idtips }
-//   title={ title }
-// />)
-
-/* <Card
-          idtips={ 5 }
-          title="Como configurar seu linux para desenvolvimento de software"
-        /> */
