@@ -1,7 +1,32 @@
-.no-select {
-  background-color: lightblue;
-}
 
 .select {
-  background-color: green;
+  background-color: darkgray;
+}
+
+.mentorCheck {
+  font-size: 1.4em;
+}
+
+.saveBtn {
+  background-color: whitesmoke;
+  border: 0.15em solid black;
+  border-radius: 10em;
+  color: black;
+  font-size: 1.2em;
+  height: 1.7em;
+  width: 8em;
+}
+
+.saveBtn:active {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.configForm {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+  justify-content: center;
+  margin-top: 5vw;
 }

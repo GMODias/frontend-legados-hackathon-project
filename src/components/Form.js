@@ -35,19 +35,19 @@ function Form() {
 
   return (
     <div>
-      <form>
-        <label htmlFor="ensinar">
+      <form className="configForm">
+        <label className="mentorCheck" htmlFor="ensinar">
           <input type="radio" name="ensinar" id="ensinar" />
           Quero ser mentor!
         </label>
-        <div className="btntipes ">
+        <div className="btntipes">
           { handleChekBox() }
         </div>
 
-        <input type="button" value="Salvar" />
+        <input className="saveBtn" type="button" value="Salvar" />
       </form>
 
-      <form>
+      {/* <form>
         <label htmlFor="name">
           Nome:
           <input id="name" type="text" name="name" />
@@ -64,7 +64,7 @@ function Form() {
         </label>
 
         <input type="submit" value="Salvar" />
-      </form>
+      </form> */}
     </div>
   );
 }
