@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Table, ButtonWithImage } from '../components';
+import { Modal, Table, ButtonWithImage, ColorGuide } from '../components';
 import '../css/pages/MentorSchedule.css';
 
 function MentorSchedule() {
@@ -20,6 +20,7 @@ function MentorSchedule() {
         </div>
       </header>
       <h1 className="headerTxt">Marcação de Mentorias - MENTOR</h1>
+      { <ColorGuide /> }
       { showTable(setShowModal) }
     </>
   );
