@@ -22,4 +22,27 @@ body {
   position: relative;
 }
 
+.btntipes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  gap: 1em;
+  flex-wrap: wrap;
+}
 
+button {
+  cursor: pointer;
+}
+
+.btntipes button {
+  padding: 10px;
+  border: none;
+  transition: 0.2s;
+  border-radius: 8px;
+  font-size: 1.2em;
+}
+
+.btntipes button:hover {
+  transform: translateY(-0.4em);
+}

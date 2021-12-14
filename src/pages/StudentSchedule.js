@@ -26,7 +26,9 @@ function StudentSchedule() {
           <ButtonWithImage kind="main" />
           { selectedTheme && <ButtonWithImage kind="back" />}
         </div>
-        { !selectedTheme && <ThemeSelector setTheme={ setSelectedTheme } /> }
+        <div className="btntipes">
+          { !selectedTheme && <ThemeSelector setTheme={ setSelectedTheme } /> }
+        </div>
         { selectedTheme && makeH1(`Marcação das Mentorias de ${selectedTheme} - ALUNO`) }
       </header>
       { selectedTheme && showTable(setShowModal) }
