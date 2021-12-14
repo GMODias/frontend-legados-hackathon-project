@@ -47,7 +47,7 @@ function Login() {
   return (
     <div className="login-div">
       <form className="form-div" onSubmit={ (e) => onSubmit(e) }>
-        {redirect && <Redirect to="/main" />}
+        { redirect && <Redirect to="/main" /> }
         <h1>LOGIN</h1>
         <input
           type="text"
@@ -65,7 +65,7 @@ function Login() {
           data-testid="password-input"
           onChange={ ({ target: { value } }) => setPasswordInput(value) }
         />
-        <p>{loginStatus}</p>
+        <p>{ loginStatus }</p>
         <button
           type="submit"
           disabled={ disableBtn }
