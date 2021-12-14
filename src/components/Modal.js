@@ -10,6 +10,30 @@ function Modal({ props }) {
   const { id, modalType } = useSelector(({ listReducer }) => listReducer);
   console.log(id, modalType);
 
+  const showAppointment = () => (
+    <div className="modal">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h4 className="modal-title"> Ação </h4>
+        </div>
+        <div className="modal-body">
+          <p> Você tem um horário marcado com os L(e||a)gados!!!! </p>
+        </div>
+        <div className="modal-footer">
+          <button
+            type="button"
+            className="modal-button"
+            onClick={ () => {
+              setShowModal(false);
+            } }
+          >
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
   const registerAppointment = () => (
     <div className="modal">
       <div className="modal-content">
@@ -51,7 +75,8 @@ function Modal({ props }) {
 
   return (
     <>
-      { registerAppointment() }
+      { modalType === 'avaiable' && registerAppointment() }
+      { modalType === 'confirmed' && showAppointment() }
     </>
   );
 }

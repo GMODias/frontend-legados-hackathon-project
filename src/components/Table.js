@@ -96,9 +96,10 @@ function Table({ modal }) {
         setDataToSend([...dataToSend, target.id]);
         target.className = `${cellBaseClName} greenlane`;
       },
-      // Confirmed deverá abrir um modal para mostrar os dados do mentor, aluno, ok para sair e cancelar.
-      confirmed: () => 1,
-      // Ao clicar no avaible e depois salvar marcações (botão a ser criado, ele deve enviar para o backend a marcação e atualizar os dados na tela).z
+      confirmed: () => {
+        dispatch(actions.addAssignment({ id: target.id, modalType: 'confirmed' }));
+        modal(true);
+      },
       avaiable: () => {
         dispatch(actions.addAssignment({ id: target.id, modalType: 'avaiable' }));
         modal(true);

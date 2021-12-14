@@ -5,7 +5,9 @@ import '../css/pages/UserConfig.css';
 function UserConfig() {
   return (
     <>
-      <ButtonWithImage kind="main" />
+      <header className="navigateBtns">
+        <ButtonWithImage kind="main" />
+      </header>
       <Form />
     </>
   );

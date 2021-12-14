@@ -1,3 +1,10 @@
+.navigateBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
 .btntipes {
   display: flex;
   align-items: center;
