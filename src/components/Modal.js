@@ -10,7 +10,7 @@ function Modal({ props }) {
   const { id, modalType } = useSelector(({ listReducer }) => listReducer);
   console.log(id, modalType);
 
-  return (
+  const registerAppointment = () => (
     <div className="modal">
       <div className="modal-content">
         <div className="modal-header">
@@ -47,6 +47,12 @@ function Modal({ props }) {
         </div>
       </div>
     </div>
+  );
+
+  return (
+    <>
+      { registerAppointment() }
+    </>
   );
 }
 
