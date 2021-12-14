@@ -1,10 +1,11 @@
-# Getting Started with Create React App
+# Projeto do time L(e||a)gados
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A equipe do grupo 3 após ponderar sobre os temas apresentados no Hackaton optou em propor soluções para as dores do Ensino de Programação, principalmente no que tange a dificuldade de novos alunos sem backgorund em tecnologia.
 
-## Available Scripts
+## Proposta
 
-In the project directory, you can run:
+Ao analisarmos o problema em questão, discutiu-se principalmente os seguintes pontos:
+
 
 ### `npm start`
 
