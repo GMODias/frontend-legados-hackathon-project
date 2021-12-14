@@ -15,7 +15,7 @@ Ao analisarmos o problema em questão, discutiu-se principalmente os seguintes p
   - Criar fora do Slack, um painel simplificado onde descrições e links de materiais didáticos sejam apresentados e exista a possibilidade do usuários marcarem se o material é bom mas avançado ou se é bom e para iniciante ("noob"), gerando um ranking com histórico de material que ajude tanto estudantes iniciantes como avançados, e possuindo o feed-back principal dos estudantes. Essa solução tem o objetivo de simplificar o slack e de mitigar a separação de canais de turma como registro de informações.
  
  + Para o ponto "calor humano", analisou-se que existem muitos alunos bons na Trybe, ainda mais com o número crescente de seus estudantes, sendo imaginado uma forma de tentar juntar os alunos que tem duvidas com os alunos que querem ajudar / mentorear outros, independente da turma que eles sejam. Existem muitos alunos que ajudam os outros e essa ajuda não aparece e alunos que tem duvidas e muitas vezes não tentam saná-las com outras pessoas, por isso foi esboçado um sistema com calendário onde os alunos marcam os horários onde têm duvidas de uma matéria especifica, outros alunos marcam horários que podem ensinar matérias que "dominam", e assim é feito um match entre eles, quase que um Tinder misturado com Calendly (agradecimentos ao Gustavo Nunes pela comparação). Foram pensadas muitas regras de negócio como avaliação dos alunos e mentores após uma meeting (soft-skills, hard-skill, se a duvida foi sanada, estrelas semelhante ao uber, etc), emissão de certificados de acordo com o tempo de mentoria, valorizando e dando visibilidade aos estudantes que ajudam os outros (mitigando um pouco o é preciso ser visto para ser lembrado), etc. 
- + PS.: é importante reforçar que a regra de negócio necessita ser muito bem alinhada e a equipe acredita que os alunos com maiores pontuações devem ser direcionados para solucionar problemas de estudantes iniciantes, principalmente por conta do cuidado que se deve ter.
+ PS.: é importante reforçar que a regra de negócio necessita ser muito bem alinhada e a equipe acredita que os alunos com maiores pontuações devem ser direcionados para solucionar problemas de estudantes iniciantes, principalmente por conta do cuidado que se deve ter.
 
 ## O que foi possível implementar das ideias?
 
@@ -23,7 +23,7 @@ Não estava muito claro para a equipe o que devia ser o produto final a ser apre
 
 No último dia de projeto do Hackathon, os monitores (Gustavo e Liipe) indicaram o melhor caminho a seguir como entrega e sendo assim focamos no Front-End da aplicação, e com o tempo restante infelizmente não foi possível elaborar os testes.
 
-Foi utilizado o React com Redux e Hooks para o desenvolvimento do Front-End e no Back-End foi utilizado o NodeJs com o Express para pontos de login e cadastro de usuários.
+Foi utilizado o React com Redux e Hooks para o desenvolvimento do Front-End e no Back-End (repositório https://github.com/0xguidev/legados-backend) foi utilizado o NodeJs com o Express para pontos de login e cadastro de usuários.
 
 ## E agora? Para onde vamos? (dormir daqui a pouco pois já é 2hrs da matina...)
 
