@@ -12,6 +12,7 @@ function App() {
       <Route path="/student" component={ pages.StudentSchedule } />
       <Route path="/tips" component={ pages.Tips } />
       <Route path="/userConfig" component={ pages.UserConfig } />
+      <Route path="/register" component={ pages.Register } />
     </Switch>
   );
 }

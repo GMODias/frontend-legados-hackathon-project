@@ -7,6 +7,7 @@ table {
 
 thead {
   background-color: black;
+  color: whitesmoke;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -14,6 +15,7 @@ thead {
 
 th {
   border: 1px solid whitesmoke;
+  color: whitesmoke;
   font-size: small;
   height: 1px;
   padding: 0;

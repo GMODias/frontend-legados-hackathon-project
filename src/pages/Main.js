@@ -7,18 +7,35 @@ function Main() {
   const [redirect, setRedirect] = useState(null);
 
   return (
-    <>
+    <div className="main-box">
       { redirect && <Redirect to={ redirect } /> }
       <header className="mainHeader">
-        <h1>Main</h1>
         <ButtonWithImage kind="config" />
       </header>
       <main>
-        <button type="button" onClick={ () => setRedirect('/student') }>Student</button>
-        <button type="button" onClick={ () => setRedirect('/mentor') }>Mentor</button>
-        <button type="button" onClick={ () => setRedirect('/tips') }>Tips</button>
+        <button
+          type="button"
+          className="btn-main"
+          onClick={ () => setRedirect('/student') }
+        >
+          Student
+        </button>
+        <button
+          type="button"
+          className="btn-main"
+          onClick={ () => setRedirect('/mentor') }
+        >
+          Mentor
+        </button>
+        <button
+          type="button"
+          className="btn-main"
+          onClick={ () => setRedirect('/tips') }
+        >
+          Tips
+        </button>
       </main>
-    </>
+    </div>
   );
 }
 
