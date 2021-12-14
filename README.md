@@ -12,7 +12,9 @@ Ao analisarmos o problema em questão, discutiu-se principalmente os seguintes p
 
 + Para o ponto de didática foram pensadas as 2 soluções abaixo:
   - Criar no ambiente de ensino mais de uma forma do material didatico ser apresentado. A ideia aqui foi manter a forma atual, mas também possibilitar uma "trilha" de aprendizado para os alunos, onde os mesmo seguiriam com um "assistente virtual", quase como a Cortana, Siri, etc, que indicaria os caminhos / ações para o aluno ir progredindo na matéria, quase que executando um passo a passo ao vivo como muitos tutoriais, mas que só evolui após o usuário executar o passo. A ideiai é inclusive criar novas trilhas se mostrem viáveis com o tempo.
-  - 
+  - Criar fora do Slack, um painel simplificado onde descrições e links de materiais didáticos sejam apresentados e exista a possibilidade do usúarios marcarem se o material é bom mas avançado ou se é bom e para iniciante ("noob"), gerando um ranking com histórico de material que ajudar tanto estudantes iniciantes como avançados, e tendo o feed-back principalmente dos estudantes. Essa solução tem o objetivo de simplificar o slack e de mitigar a separação de canais de turma como registro de informações.
+ 
+ + Para o ponto "Calor humano", analisou-se que existem muitos alunos bons na Trybe, ainda mais com o número crescente de seus estudantes, sendo imaginado uma forma de tentar juntar os alunos que tem duvidas com os alunos que querem ajudar / mentorar outros, independente da turma que eles sejam. Existem muitos alunos que ajudam os outros e essa ajuda não aparece e alunos que tem duvidas e muitas vezes não tentam sana-las com outras pessoas, por isso foi esboçado um sistema com calendário onde os alunos marcam os hórarios onde têm duvidas de uma matéria especifica, outros alunos marcam horários que podem ensinar matérias que "dominam", e assim é feito um match entre eles, quase que um Tinder misturado com Calendly.
 
 ### `npm test`
 
