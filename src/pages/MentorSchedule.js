@@ -21,7 +21,6 @@ function MentorSchedule() {
       </header>
       <h1 className="headerTxt">Marcação de Mentorias - MENTOR</h1>
       { showTable(setShowModal) }
-
     </>
   );
 }

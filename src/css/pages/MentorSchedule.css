@@ -15,11 +15,33 @@ body {
   justify-content: center;
   display: flex;
   height: 80vh;
-  margin-left:  29vw;
-  margin-right:  29vw;
+  margin-left: 29vw;
+  margin-right: 29vw;
   margin-top: 10vh;
   overflow-y: scroll;
   position: relative;
 }
 
+.status {
+  width: 300px;
+  margin: 0 auto;
+}
 
+.status span {
+  margin: 0 16px;
+  padding: 0.4em 0.6em;
+  border-radius: 16px;
+  font-size: 0.8em;
+}
+
+.status span:nth-child(1) {
+  background: green;
+}
+
+.status span:nth-child(2) {
+  background: blue;
+}
+
+.status span:nth-child(3) {
+  background: red;
+}
