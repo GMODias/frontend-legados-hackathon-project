@@ -18,7 +18,7 @@ function Main() {
           className="btn-main"
           onClick={ () => setRedirect('/student') }
         >
-          Student
+          Duvida
         </button>
         <button
           type="button"
@@ -32,7 +32,7 @@ function Main() {
           className="btn-main"
           onClick={ () => setRedirect('/tips') }
         >
-          Tips
+          Dicas
         </button>
       </main>
     </div>
