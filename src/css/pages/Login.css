@@ -29,10 +29,10 @@
 }
 
 .login-div button {
-  background-color: green;
-  border: 0.4vmin solid red;
+  background-color: whitesmoke;
+  border: 0.4vmin solid black;
   border-radius: 3vmin;
-  color: red;
+  color: black;
   font-size: 2vmin;
   height: 4vmin;
   margin: 2vmin;
@@ -44,4 +44,9 @@
   background-color: transparent;
   border: 0.4vmin solid transparent;
   color: transparent;
+}
+
+.btnLink {
+  color: black;
+  text-decoration: none;
 }

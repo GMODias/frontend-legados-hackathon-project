@@ -67,15 +67,15 @@ function Login() {
         />
         <p>{ loginStatus }</p>
         <button
-          type="submit"
           disabled={ disableBtn }
+          type="submit"
         >
           ENTRAR
         </button>
         <button
           type="button"
         >
-          <Link to="/register">Cadastrar </Link>
+          <Link className="btnLink" to="/register">CADASTRAR</Link>
         </button>
       </form>
     </div>
