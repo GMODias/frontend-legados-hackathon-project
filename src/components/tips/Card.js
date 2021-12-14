@@ -41,10 +41,11 @@ const Linux = ({ idtips, title }) => {
       });
     }
 
-    if (!converted[index].usersLike.includes('Other User')) {
-      converted[index].userlikes += 1;
-      converted[index].usersLike.push('Other User');
-      setVotes(converted[index].userlikes);
+    const nindex = converted.findIndex(({ id }) => id === idtips);
+    if (!converted[nindex].usersLike.includes('Other User')) {
+      converted[nindex].userlikes += 1;
+      converted[nindex].usersLike.push('Other User');
+      setVotes(converted[nindex].userlikes);
     }
 
     localStorage.setItem('uservotes', JSON.stringify([
@@ -66,10 +67,11 @@ const Linux = ({ idtips, title }) => {
       });
     }
 
-    if (!converted[index].usersLike.includes('Marlon')) {
-      converted[index].mentLikes += 1;
-      converted[index].usersLike.push('Marlon');
-      setMentVotes(converted[index].mentLikes);
+    const nindex = converted.findIndex(({ id }) => id === idtips);
+    if (!converted[nindex].usersLike.includes('Marlon')) {
+      converted[nindex].mentLikes += 1;
+      converted[nindex].usersLike.push('Marlon');
+      setMentVotes(converted[nindex].mentLikes);
     }
 
     localStorage.setItem('uservotes', JSON.stringify([
