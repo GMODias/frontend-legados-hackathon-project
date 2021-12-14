@@ -5,31 +5,22 @@ import '../css/pages/MentorSchedule.css';
 function MentorSchedule() {
   const [showModal, setShowModal] = useState(false);
 
-  const showTable = () => (
+  const showTable = (showModalHandler) => (
     <div className="scheduleTableDiv">
-      <Table />
+      <Table modal={ showModalHandler } />
     </div>
   );
 
   return (
     <>
+      {showModal && <Modal props={ { setShowModal } } />}
       <header>
         <div className="navigateBtns">
           <ButtonWithImage kind="main" />
-          { showModal && <Modal props={ { setShowModal } } /> }
         </div>
       </header>
-      <button type="button" onClick={ () => setShowModal(true) }>teste</button>
       <h1 className="headerTxt">Marcação de Mentorias - MENTOR</h1>
-
-      <div className="status">
-        <span>Disponivel</span>
-        <span>Marcado</span>
-        <span>Ocupdo</span>
-      </div>
-
-      { showTable() }
-
+      { showTable(setShowModal) }
     </>
   );
 }

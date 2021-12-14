@@ -1,6 +1,8 @@
-const addAssignment = (value) => ({
+export const addAssignment = (value) => ({
   type: 'ADD_ELEMENT',
-  value,
+  ...value,
 });
 
-export default addAssignment;
+export const removeAssignment = () => ({
+  type: 'REMOVE_ELEMENT',
+});

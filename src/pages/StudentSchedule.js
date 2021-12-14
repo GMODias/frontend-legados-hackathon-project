@@ -3,12 +3,12 @@ import { Modal, Table, ButtonWithImage, ThemeSelector } from '../components';
 import '../css/pages/StudentSchedule.css';
 
 function StudentSchedule() {
-  const [showModal, setShowModal] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
-  const showTable = () => (
+  const showTable = (showModalHandler) => (
     <div className="scheduleTableDiv">
-      <Table />
+      <Table modal={ showModalHandler } />
     </div>
   );
 
@@ -20,17 +20,16 @@ function StudentSchedule() {
 
   return (
     <>
+      {showModal && <Modal props={ { setShowModal } } />}
       <header>
         <div className="navigateBtns">
-          {showModal && <Modal props={ { setShowModal } } />}
           <ButtonWithImage kind="main" />
           { selectedTheme && <ButtonWithImage kind="back" />}
-          <button type="button" onClick={ () => setShowModal(true) }>teste</button>
         </div>
         { !selectedTheme && <ThemeSelector setTheme={ setSelectedTheme } /> }
         { selectedTheme && makeH1(`Marcação das Mentorias de ${selectedTheme} - ALUNO`) }
       </header>
-      { selectedTheme && showTable() }
+      { selectedTheme && showTable(setShowModal) }
     </>
   );
 }
