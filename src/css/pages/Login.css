@@ -46,6 +46,10 @@
   color: transparent;
 }
 
+.serverMsg {
+  color: whitesmoke;
+}
+
 .btnLink {
   color: black;
   text-decoration: none;

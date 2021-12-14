@@ -65,7 +65,7 @@ function Login() {
           data-testid="password-input"
           onChange={ ({ target: { value } }) => setPasswordInput(value) }
         />
-        <p>{ loginStatus }</p>
+        <p className="serverMsg">{ loginStatus }</p>
         <button
           disabled={ disableBtn }
           type="submit"

@@ -26,7 +26,7 @@ function Form() {
       type="button"
       onClick={ ({ target }) => {
         verifyTheme(theme);
-        target.className = 'select';
+        target.className = target.className === 'select' ? 'no-select' : 'select';
       } }
     >
       { theme }
@@ -40,8 +40,9 @@ function Form() {
           <input type="radio" name="ensinar" id="ensinar" />
           Quero ser mentor!
         </label>
-
-        { handleChekBox() }
+        <div className="btntipes ">
+          { handleChekBox() }
+        </div>
 
         <input type="button" value="Salvar" />
       </form>
