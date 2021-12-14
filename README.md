@@ -20,55 +20,17 @@ PS.: é importante reforçar que a regra de negócio necessita ser muito bem ali
 ## O que foi possível implementar das ideias?
 
 Não estava muito claro para a equipe o que devia ser o produto final a ser apresentado. Inicialmente pensamos muito em todo o potencial e o que queriamos chegar com o produto, tentando estruturar um back-end "parrudo" e com as regras de negócios boas, mas de implementação muito complicada, principalmente com o tempo que tinhamos.
+
 No último dia de projeto do Hackathon, os monitores (Gustavo e Liipe) indicaram o melhor caminho a seguir como entrega e sendo assim focamos no Front-End da aplicação, e com o tempo restante infelizmente não foi possível elaborar os testes.
+
 Foi utilizado o React com Redux e Hooks para o desenvolvimento do Front-End e no Back-End foi utilizado o NodeJs com o Express para pontos de login e cadastro de usuários.
 
-## `npm run build`
+## E agora? Para onde vamos? (dormir daqui a pouco pois já é 2hrs da matina...)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A expreriência foi muito produtiva, e a equipe pensa em a partir de agorautilizar o tempo livre para evoluir no desenvolvimento da aplicação, sendo estes os primeiros a utilizarem-na, não só para tirar duvidas, mas para marcar horário para beber, codar, evoluir a ideia e quem sabe um dia ter um produto 100% funcional no mercado com o nosso nome e nossa cara.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para você que chegou até aqui, muito Obrigado pela atenção!!!
+Equipe L(e||a)gados - Grupo 3 - Alex Smith, Guilherme de Paula , Guilherme Dias e Marlon Ramos.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+PS.: em novas implementações já estão sendo pensados inúmeros Easter-Eggs!!!
