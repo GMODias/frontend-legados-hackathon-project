@@ -58,7 +58,7 @@ const Linux = ({ idtips, title }) => {
     const converted = JSON.parse(getVotes);
     const index = converted.findIndex(({ id }) => id === idtips);
 
-    if (!index) {
+    if (index < 0) {
       converted.push({
         id: idtips,
         userlikes: 0,
