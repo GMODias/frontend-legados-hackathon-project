@@ -1,19 +1,18 @@
 # Projeto do time L(e||a)gados
 
-A equipe do grupo 3 após ponderar sobre os temas apresentados no Hackaton optou em propor soluções para as dores do Ensino de Programação, principalmente no que tange a dificuldade de novos alunos sem backgorund em tecnologia.
+A equipe do grupo 3 após ponderar sobre os temas apresentados no Hackaton optou em propor soluções para as dores do Ensino de Programação, principalmente no que tange a dificuldade de novos alunos sem backgorund em tecnologia em aprender e se manter no curso.
 
-## Proposta
+## Avaliação Inicial do Problema
 
 Ao analisarmos o problema em questão, discutiu-se principalmente os seguintes pontos:
++ Didatica: Cada pessoa é um individuo, e cada um aprende de uma maneira e em um tempo diferente.
++ "Calor humano": Para pessoas recém chegadas muitas vezes a necessidade de um aproach mais perto de alguém com mais conhecimento e disponibilidade de ensinar, ainda mais quando os primeiros passos são instalar e aprender Linux, Bash, utilizar IDE's e o GIT.
 
+## Soluções apresentadas
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
++ Para o ponto de didática foram pensadas as 2 soluções abaixo:
+  - Criar no ambiente de ensino mais de uma forma do material didatico ser apresentado. A ideia aqui foi manter a forma atual, mas também possibilitar uma "trilha" de aprendizado para os alunos, onde os mesmo seguiriam com um "assistente virtual", quase como a Cortana, Siri, etc, que indicaria os caminhos / ações para o aluno ir progredindo na matéria, quase que executando um passo a passo ao vivo como muitos tutoriais, mas que só evolui após o usuário executar o passo. A ideiai é inclusive criar novas trilhas se mostrem viáveis com o tempo.
+  - 
 
 ### `npm test`
 
