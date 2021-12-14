@@ -20,11 +20,14 @@ function Form() {
 
   const handleChekBox = () => allThemes.map((theme) => (
     <button
-      className={ clas }
+      className="no-select"
       id={ theme }
       key={ theme }
       type="button"
-      onClick={ () => verifyTheme(theme) }
+      onClick={ ({ target }) => {
+        verifyTheme(theme);
+        target.className = 'select';
+      } }
     >
       { theme }
     </button>
@@ -40,7 +43,7 @@ function Form() {
 
         { handleChekBox() }
 
-        <input type="submit" value="Salvar" />
+        <input type="button" value="Salvar" />
       </form>
 
       <form>
