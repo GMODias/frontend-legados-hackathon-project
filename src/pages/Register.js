@@ -50,7 +50,7 @@ function Register() {
   return (
     <div className="login-div">
       <form onSubmit={ (e) => onSubmit(e) }>
-        {redirect && <Redirect to="/" />}
+        { redirect && <Redirect to="/" /> }
         <h1>LOGIN</h1>
         <input
           type="text"
@@ -76,7 +76,7 @@ function Register() {
           data-testid="password-input"
           onChange={ ({ target: { value } }) => setPasswordInput(value) }
         />
-        <p>{loginStatus}</p>
+        <p>{ loginStatus }</p>
         <button
           type="submit"
           disabled={ disableBtn }
