@@ -5,9 +5,9 @@ import '../css/pages/MentorSchedule.css';
 function MentorSchedule() {
   const [showModal, setShowModal] = useState(false);
 
-  const showTable = () => (
+  const showTable = (showModalHandler) => (
     <div className="scheduleTableDiv">
-      <Table />
+      <Table modal={ showModalHandler } />
     </div>
   );
 
@@ -21,7 +21,7 @@ function MentorSchedule() {
       </header>
       <button type="button" onClick={ () => setShowModal(true) }>teste</button>
       <h1 className="headerTxt">Marcação de Mentorias - MENTOR</h1>
-      { showTable() }
+      { showTable(setShowModal) }
 
     </>
   );

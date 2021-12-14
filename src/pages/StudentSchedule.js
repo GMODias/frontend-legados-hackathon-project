@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Modal, Table, ButtonWithImage, ThemeSelector } from '../components';
+import { Table, ButtonWithImage, ThemeSelector } from '../components';
 import '../css/pages/StudentSchedule.css';
 
 function StudentSchedule() {
-  const [showModal, setShowModal] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState(null);
 
   const showTable = () => (
@@ -22,10 +21,8 @@ function StudentSchedule() {
     <>
       <header>
         <div className="navigateBtns">
-          {showModal && <Modal props={ { setShowModal } } />}
           <ButtonWithImage kind="main" />
           { selectedTheme && <ButtonWithImage kind="back" />}
-          <button type="button" onClick={ () => setShowModal(true) }>teste</button>
         </div>
         { !selectedTheme && <ThemeSelector setTheme={ setSelectedTheme } /> }
         { selectedTheme && makeH1(`Marcação das Mentorias de ${selectedTheme} - ALUNO`) }

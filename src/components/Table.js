@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import * as actions from '../redux/actions';
 import '../css/components/Table.css';
 
-const confirmedMock = [
-  '{"time":"02:30","date":"15/12/2021"}',
-  '{"time":"02:30","date":"16/12/2021"}',
-  '{"time":"03:00","date":"17/12/2021"}',
-  '{"time":"03:30","date":"18/12/2021"}',
-];
+const confirmedMock = [];
 
-const teachingAvaiabilityMock = [
+const avaiableMock = [
   '{"time":"01:00","date":"17/12/2021"}',
   '{"time":"01:00","date":"15/12/2021"}',
   '{"time":"00:30","date":"14/12/2021"}',
   '{"time":"00:00","date":"17/12/2021"}',
+  '{"time":"03:30","date":"18/12/2021"}',
+  '{"time":"02:30","date":"15/12/2021"}',
+  '{"time":"02:30","date":"16/12/2021"}',
+  '{"time":"03:00","date":"17/12/2021"}',
   '{"time":"03:30","date":"18/12/2021"}',
 ];
 
@@ -35,10 +37,16 @@ const tableCellClasses = {
 
 const cellBaseClName = 'baseCell';
 
-function Table() {
+function Table({ modal }) {
   const [dateInfo, setDateInfo] = useState(null);
   const [timeNow, setTimeNow] = useState(null);
   const [dataToSend, setDataToSend] = useState([]);
+  const dispatch = useDispatch();
+
+  if (!dateInfo) {
+    localStorage.setItem('confirmed', JSON.stringify(confirmedMock));
+    localStorage.setItem('avaiable', JSON.stringify(avaiableMock));
+  }
 
   const lenTwo = (num) => {
     const dez = 10;
@@ -91,7 +99,10 @@ function Table() {
       // Confirmed deverá abrir um modal para mostrar os dados do mentor, aluno, ok para sair e cancelar.
       confirmed: () => 1,
       // Ao clicar no avaible e depois salvar marcações (botão a ser criado, ele deve enviar para o backend a marcação e atualizar os dados na tela).z
-      avaiable: () => 1,
+      avaiable: () => {
+        dispatch(actions.addAssignment({ id: target.id, modalType: 'avaiable' }));
+        modal(true);
+      },
       blocked: () => 1,
     };
     scheduleClickAction[target.classList[1]]();
@@ -99,6 +110,8 @@ function Table() {
   };
 
   const cellDate = (i, j, scheduleTimes) => {
+    const avaiable = JSON.parse(localStorage.getItem('avaiable'));
+    const confirmed = JSON.parse(localStorage.getItem('confirmed'));
     const bit2 = 2;
     const bit3 = 4;
     const bit4 = 8;
@@ -108,8 +121,8 @@ function Table() {
       time: scheduleTimes[i],
       date: dateInfo[j - 1].monthDay,
     });
-    const cellStatus = bit2 + confirmedMock.includes(id) * bit3
-      + teachingAvaiabilityMock.includes(id) * bit4
+    const cellStatus = bit2 + confirmed.includes(id) * bit3
+      + avaiable.includes(id) * bit4
       + ((timeNow > scheduleTimes[i] && j === 1)
         || (removeDay(timeNow) > scheduleTimes[i] && j === 2)) * bit5;
     return (
@@ -166,5 +179,9 @@ function Table() {
     </>
   );
 }
+
+Table.propTypes = {
+  modal: PropTypes.func.isRequired,
+};
 
 export default Table;
