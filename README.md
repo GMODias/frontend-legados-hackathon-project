@@ -2,6 +2,8 @@
 
 A equipe do grupo 3 após ponderar sobre os temas apresentados no Hackathon optou em propor soluções para as dores do Ensino de Programação, principalmente no que tange a dificuldade de novos alunos sem back-ground em tecnologia em aprender e se manter no curso.
 
+<img src="https://github.com/GMODias/frontend-legados-hackathon-project/blob/main/Captura_de_tela_de_2021-12-14_01-48-40-ANIMATION.gif" alt="frontend-legados-hackathon" />
+
 ## Avaliação Inicial do Problema
 
 Ao analisarmos o problema em questão, discutiu-se principalmente os seguintes pontos:
